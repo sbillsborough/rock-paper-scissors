@@ -4,7 +4,14 @@
 // alert the winner
 
 function getComputerChoice(choice = 3) {
-  return Math.floor(Math.random() * choice);
+  let computerNumber = Math.floor(Math.random() * choice);
+  if (computerNumber === 0) {
+    return "rock";
+  } else if (computerNumber === 1) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
 }
 
 console.log(getComputerChoice());
