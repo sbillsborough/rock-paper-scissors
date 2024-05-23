@@ -15,3 +15,12 @@ function getComputerChoice(choice = 3) {
 }
 
 console.log(getComputerChoice());
+
+function getHumanChoice() {
+  console.log(prompt("Player chose rock, paper or scissors!"));
+}
+
+// getHumanChoice();
+
+let humanScore = 0;
+let computerScore = 0;
