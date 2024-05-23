@@ -15,11 +15,9 @@ function getComputerChoice(choice = 3) {
   }
 }
 
-console.log(getComputerChoice());
-
 // HUMAN CHOICE
 function getHumanChoice() {
-  console.log(prompt("Player choose rock, paper or scissors!"));
+  return prompt("Player choose rock, paper or scissors!");
 }
 
 // getHumanChoice();
@@ -27,3 +25,12 @@ function getHumanChoice() {
 // SCORE GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
+
+// LOGIC TO PLAY A SINGLE ROUND
+function playRound(humanChoice, computerChoice) {
+  // humanChoice = humanChoice.toLowerCase(); // variable reassignment
+  console.log(humanChoice + " from playRound function");
+  console.log(computerChoice);
+}
+
+playRound(getHumanChoice(), getComputerChoice());
