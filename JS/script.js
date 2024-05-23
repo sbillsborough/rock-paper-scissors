@@ -3,6 +3,7 @@
 // assign winning conditions with an if statement
 // alert the winner
 
+// COMPUTER CHOICE
 function getComputerChoice(choice = 3) {
   let computerNumber = Math.floor(Math.random() * choice);
   if (computerNumber === 0) {
@@ -16,11 +17,13 @@ function getComputerChoice(choice = 3) {
 
 console.log(getComputerChoice());
 
+// HUMAN CHOICE
 function getHumanChoice() {
-  console.log(prompt("Player chose rock, paper or scissors!"));
+  console.log(prompt("Player choose rock, paper or scissors!"));
 }
 
 // getHumanChoice();
 
+// SCORE GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
