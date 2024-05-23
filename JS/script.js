@@ -28,7 +28,7 @@ let computerScore = 0;
 
 // LOGIC TO PLAY A SINGLE ROUND
 function playRound(humanChoice, computerChoice) {
-  // humanChoice = humanChoice.toLowerCase(); // variable reassignment
+  humanChoice = humanChoice.toLowerCase(); // variable reassignment
   console.log(humanChoice + " from playRound function");
   console.log(computerChoice);
 }
