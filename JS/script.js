@@ -27,10 +27,33 @@ let humanScore = 0;
 let computerScore = 0;
 
 // LOGIC TO PLAY A SINGLE ROUND
+
 function playRound(humanChoice, computerChoice) {
-  // humanChoice = humanChoice.toLowerCase(); // variable reassignment
-  console.log(humanChoice + " from playRound function");
+  humanChoice = humanChoice.toLowerCase(); // variable reassignment
+  console.log(humanChoice);
   console.log(computerChoice);
+  if (humanChoice === computerChoice) {
+    console.log("DRAW");
+  } else if (humanChoice === "rock" && computerChoice === "paper") {
+    console.log("Computer wins! Paper beats Rock");
+    ++computerScore;
+  } else if (humanChoice === "rock" && computerChoice === "scissors") {
+    console.log("You win! Rock beats Scissors");
+    ++humanScore;
+  } else if (humanChoice === "paper" && computerChoice === "rock") {
+    console.log("You win! Paper beats Rock");
+    ++humanScore;
+  } else if (humanChoice === "paper" && computerChoice === "scissors") {
+    console.log("Computer wins! Scissors beats paper");
+    ++computerScore;
+  } else if (humanChoice === "scissors" && computerChoice === "rock") {
+    console.log("Computer wins! Rock beats Scissors");
+    ++computerScore;
+  } else if (humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("You win! Scissors beats Paper");
+    ++humanScore;
+  }
+  console.log(humanScore, computerScore);
 }
 
 playRound(getHumanChoice(), getComputerChoice());
