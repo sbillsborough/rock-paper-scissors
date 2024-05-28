@@ -22,8 +22,8 @@ function getHumanChoice() {
 
 // getHumanChoice();
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
 
 // playRound(humanSelection, computerSelection);
 
