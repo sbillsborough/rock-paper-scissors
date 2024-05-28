@@ -23,7 +23,7 @@ let computerScore = 0;
 function playGame() {
   // LOGIC TO PLAY A SINGLE ROUND
   function playRound(humanChoice, computerChoice) {
-    // humanChoice = humanChoice.toLowerCase(); // variable reassignment
+    humanChoice = humanChoice.toLowerCase();
     console.log(humanChoice);
     console.log(computerChoice);
     if (humanChoice === computerChoice) {
