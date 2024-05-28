@@ -29,11 +29,11 @@ function getHumanChoice() {
 
 // LOGIC TO PLAY THE ENTIRE GAME
 
-function playGame() {
-  // SCORE GLOBAL VARIABLES
-  let humanScore = 0;
-  let computerScore = 0;
+// SCORE GLOBAL VARIABLES
+let humanScore = 0;
+let computerScore = 0;
 
+function playGame() {
   // LOGIC TO PLAY A SINGLE ROUND
 
   function playRound(humanChoice, computerChoice) {
