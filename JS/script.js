@@ -52,9 +52,10 @@ function playGame() {
 
 // LOOP TO PLAY THE GAME 5 TIMES THEN COMPARE THE SCORES
 function letsPlay() {
-  for (let i = 0; i < 1; i++) {
-    playGame();
-  }
+  // for (let i = 0; i < 1; i++) {
+  //   playGame();
+  // }
+  playGame();
 
   if (humanScore > computerScore) {
     console.log("You won the game!");
