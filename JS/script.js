@@ -20,7 +20,7 @@ function getHumanChoice() {
 // COMPUTER CHOICE FUNCTION
 function getComputerChoice(choice = 3) {
   let computerNumber = Math.floor(Math.random() * choice);
-  console.log(`computer number ${computerNumber}`);
+  console.log("computer choice " + hands[computerNumber]);
   return hands[computerNumber];
 }
 
@@ -34,11 +34,14 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     if (humanChoice === computerChoice) {
+      console.log(beats[humanChoice] + " draw");
       console.log("Draw");
     } else if (beats[humanChoice] === computerChoice) {
+      console.log(beats[humanChoice] + " win");
       console.log("player wins");
       ++humanScore;
     } else {
+      console.log(beats[humanChoice] + " loss");
       console.log("computer wins");
       ++computerScore;
     }
@@ -49,7 +52,7 @@ function playGame() {
 
 // LOOP TO PLAY THE GAME 5 TIMES THEN COMPARE THE SCORES
 function letsPlay() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 1; i++) {
     playGame();
   }
 
