@@ -6,6 +6,18 @@ const beats = {
   scissors: "paper",
 };
 
+// UI BUTTONS
+
+const parentElement = document.querySelector("h1").parentNode;
+
+const btnRock = document.createElement("button");
+btnRock.textContent = "Rock";
+btnRock.addEventListener("click", () => {
+  console.log(btnRock.textContent);
+});
+
+parentElement.appendChild(btnRock);
+
 // HUMAN CHOICE FUNCTION
 function getHumanChoice() {
   let valid = false;
@@ -52,9 +64,10 @@ function playGame() {
 
 // LOOP TO PLAY THE GAME 5 TIMES THEN COMPARE THE SCORES
 function letsPlay() {
-  for (let i = 0; i < 1; i++) {
-    playGame();
-  }
+  // for (let i = 0; i < 1; i++) {
+  //   playGame();
+  // }
+  playGame();
 
   if (humanScore > computerScore) {
     console.log("You won the game!");
@@ -65,4 +78,4 @@ function letsPlay() {
   }
 }
 
-letsPlay();
+// letsPlay();
