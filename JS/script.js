@@ -6,6 +6,18 @@ const beats = {
   scissors: "paper",
 };
 
+// UI BUTTONS
+
+const parentElement = document.querySelector("h1").parentNode;
+
+const btnRock = document.createElement("button");
+btnRock.textContent = "Rock";
+btnRock.addEventListener("click", () => {
+  console.log(btnRock.textContent);
+});
+
+parentElement.appendChild(btnRock);
+
 // HUMAN CHOICE FUNCTION
 function getHumanChoice() {
   let valid = false;
@@ -66,4 +78,4 @@ function letsPlay() {
   }
 }
 
-letsPlay();
+// letsPlay();
