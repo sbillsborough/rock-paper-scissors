@@ -6,32 +6,6 @@ const beats = {
   scissors: "paper",
 };
 
-// UI BUTTONS
-
-const parentElement = document.querySelector("h1").parentNode;
-
-const btnRock = document.createElement("button");
-btnRock.textContent = "Rock";
-btnRock.addEventListener("click", () => {
-  console.log(btnRock.textContent);
-});
-
-const btnPaper = document.createElement("button");
-btnPaper.textContent = "Paper";
-btnPaper.addEventListener("click", () => {
-  console.log(btnPaper.textContent);
-});
-
-const btnScissors = document.createElement("button");
-btnScissors.textContent = "Scissors";
-btnScissors.addEventListener("click", () => {
-  console.log(btnScissors.textContent);
-});
-
-parentElement.appendChild(btnRock);
-parentElement.appendChild(btnPaper);
-parentElement.appendChild(btnScissors);
-
 // HUMAN CHOICE FUNCTION
 function getHumanChoice() {
   let valid = false;
@@ -55,26 +29,27 @@ let humanScore = 0;
 let computerScore = 0;
 
 // LOGIC TO PLAY THE ENTIRE GAME
-function playGame() {
-  // LOGIC TO PLAY A SINGLE ROUND
-  function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    if (humanChoice === computerChoice) {
-      console.log(beats[humanChoice] + " draw");
-      console.log("Draw");
-    } else if (beats[humanChoice] === computerChoice) {
-      console.log(beats[humanChoice] + " win");
-      console.log("player wins");
-      ++humanScore;
-    } else {
-      console.log(beats[humanChoice] + " loss");
-      console.log("computer wins");
-      ++computerScore;
-    }
-    console.log(humanScore, computerScore);
+// function playGame() {
+// LOGIC TO PLAY A SINGLE ROUND
+function playRound(humanChoice, computerChoice) {
+  console.log(humanChoice + " human choice from playRound function");
+  if (humanChoice === computerChoice) {
+    console.log(beats[humanChoice] + " draw");
+    console.log("Draw");
+  } else if (beats[humanChoice] === computerChoice) {
+    console.log(beats[humanChoice] + " win");
+    console.log("player wins");
+    ++humanScore;
+  } else {
+    console.log(beats[humanChoice] + " loss");
+    console.log("computer wins");
+    ++computerScore;
   }
-  return playRound(getHumanChoice(), getComputerChoice());
+
+  console.log(humanScore, computerScore);
 }
+//   return playRound(getHumanChoice(), getComputerChoice());
+// }
 
 // LOOP TO PLAY THE GAME 5 TIMES THEN COMPARE THE SCORES
 function letsPlay() {
@@ -93,3 +68,29 @@ function letsPlay() {
 }
 
 // letsPlay();
+
+// UI BUTTONS
+
+const parentElement = document.querySelector("h1").parentNode;
+
+const btnRock = document.createElement("button");
+btnRock.textContent = "Rock";
+btnRock.addEventListener("click", () => {
+  playRound(btnRock.textContent.toLowerCase(), getComputerChoice());
+});
+
+const btnPaper = document.createElement("button");
+btnPaper.textContent = "Paper";
+btnPaper.addEventListener("click", () => {
+  playRound(btnPaper.textContent.toLowerCase(), getComputerChoice());
+});
+
+const btnScissors = document.createElement("button");
+btnScissors.textContent = "Scissors";
+btnScissors.addEventListener("click", () => {
+  playRound(btnPaper.textContent.toLowerCase(), getComputerChoice());
+});
+
+parentElement.appendChild(btnRock);
+parentElement.appendChild(btnPaper);
+parentElement.appendChild(btnScissors);
