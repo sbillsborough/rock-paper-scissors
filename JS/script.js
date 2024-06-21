@@ -16,7 +16,21 @@ btnRock.addEventListener("click", () => {
   console.log(btnRock.textContent);
 });
 
+const btnPaper = document.createElement("button");
+btnPaper.textContent = "Paper";
+btnPaper.addEventListener("click", () => {
+  console.log(btnPaper.textContent);
+});
+
+const btnScissors = document.createElement("button");
+btnScissors.textContent = "Scissors";
+btnScissors.addEventListener("click", () => {
+  console.log(btnScissors.textContent);
+});
+
 parentElement.appendChild(btnRock);
+parentElement.appendChild(btnPaper);
+parentElement.appendChild(btnScissors);
 
 // HUMAN CHOICE FUNCTION
 function getHumanChoice() {
