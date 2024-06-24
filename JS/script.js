@@ -34,14 +34,14 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   console.log(humanChoice + " human choice from playRound function");
   if (humanChoice === computerChoice) {
-    console.log(beats[humanChoice] + " ie. the opposite" + " draw");
+    console.log(beats[humanChoice] + " draw");
     console.log("Draw");
   } else if (beats[humanChoice] === computerChoice) {
-    console.log(beats[humanChoice] + " ie. the opposite" + " win");
+    console.log(beats[humanChoice] + " win");
     console.log("player wins");
     ++humanScore;
   } else {
-    console.log(beats[humanChoice] + " ie. the opposite" + " loss");
+    console.log(beats[humanChoice] + " loss");
     console.log("computer wins");
     ++computerScore;
   }
@@ -88,9 +88,12 @@ btnPaper.addEventListener("click", () => {
 const btnScissors = document.createElement("button");
 btnScissors.textContent = "Scissors";
 btnScissors.addEventListener("click", () => {
-  playRound(btnScissors.textContent.toLowerCase(), getComputerChoice());
+  playRound(btnPaper.textContent.toLowerCase(), getComputerChoice());
 });
 
 parentElement.appendChild(btnRock);
 parentElement.appendChild(btnPaper);
 parentElement.appendChild(btnScissors);
+
+const resultsDiv = document.createElement("div");
+parentElement.appendChild(resultsDiv);
