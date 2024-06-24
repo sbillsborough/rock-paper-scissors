@@ -27,6 +27,7 @@ function getComputerChoice(choice = 3) {
 // GLOBAL SCORE VARIABLES
 let humanScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0;
 
 // LOGIC TO PLAY THE ENTIRE GAME
 // function playGame() {
@@ -46,7 +47,30 @@ function playRound(humanChoice, computerChoice) {
     ++computerScore;
   }
 
+  ++roundsPlayed;
+  console.log("rounds played = " + roundsPlayed);
+
   console.log(humanScore, computerScore);
+  resultsDiv.textContent = `You chose: ${humanChoice}, computer chose: ${computerChoice}. Score: Human = ${humanScore}, Computer = ${computerScore}`;
+
+  if (roundsPlayed === 5) {
+    if (humanScore > computerScore) {
+      resultsDiv.textContent = `You won the game! With a score of Human: ${humanScore} to Computer: ${computerScore}`;
+      humanScore = 0;
+      computerScore = 0;
+      roundsPlayed = 0;
+    } else if (computerScore > humanScore) {
+      resultsDiv.textContent = `The computer won the game! With a score of Human: ${humanScore} to Computer: ${computerScore}`;
+      humanScore = 0;
+      computerScore = 0;
+      roundsPlayed = 0;
+    } else {
+      resultsDiv.textContent = `The game was tied!  With a score of Human: ${humanScore} to Computer: ${computerScore}`;
+      humanScore = 0;
+      computerScore = 0;
+      roundsPlayed = 0;
+    }
+  }
 }
 //   return playRound(getHumanChoice(), getComputerChoice());
 // }
@@ -88,7 +112,7 @@ btnPaper.addEventListener("click", () => {
 const btnScissors = document.createElement("button");
 btnScissors.textContent = "Scissors";
 btnScissors.addEventListener("click", () => {
-  playRound(btnPaper.textContent.toLowerCase(), getComputerChoice());
+  playRound(btnScissors.textContent.toLowerCase(), getComputerChoice());
 });
 
 parentElement.appendChild(btnRock);
