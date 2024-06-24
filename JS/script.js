@@ -47,6 +47,7 @@ function playRound(humanChoice, computerChoice) {
   }
 
   console.log(humanScore, computerScore);
+  resultsDiv.textContent = `You chose: ${humanChoice}, computer chose: ${computerChoice}. Score: Human = ${humanScore}, Computer = ${computerScore}`;
 }
 //   return playRound(getHumanChoice(), getComputerChoice());
 // }
@@ -88,7 +89,7 @@ btnPaper.addEventListener("click", () => {
 const btnScissors = document.createElement("button");
 btnScissors.textContent = "Scissors";
 btnScissors.addEventListener("click", () => {
-  playRound(btnPaper.textContent.toLowerCase(), getComputerChoice());
+  playRound(btnScissors.textContent.toLowerCase(), getComputerChoice());
 });
 
 parentElement.appendChild(btnRock);
